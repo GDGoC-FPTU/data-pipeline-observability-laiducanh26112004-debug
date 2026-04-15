@@ -13,8 +13,8 @@ Chay `agent_simulation.py` voi 2 bo du lieu va ghi lai ket qua:
 
 | Scenario | Agent Response | Accuracy (1-10) | Notes |
 |----------|----------------|-----------------|-------|
-| Clean Data (`processed_data.csv`) | Danh sach san pham hop le gom Laptop, Chair, Phone, Monitor thuoc cac danh muc ro rang nhu electronics, furniture. Gia tri deu hop le va khong co du lieu bat thuong. | 9 | Du lieu da duoc lam sach: loai bo gia tri am, dien category thieu, dam bao tinh nhat quan |
-| Garbage Data (`garbage_data.csv`) | Co san pham gia am (Mystery Box), category rong (Phone), du lieu khong dong nhat gay nham lan khi phan tich va dua ra ket qua. | 4 | Ton tai du lieu loi: gia tri am, thieu category, du lieu khong hop le |
+| Clean Data (`processed_data.csv`) | Agent: Based on my data, the best choice is Laptop at $1200. | 9 | Du lieu da duoc lam sach, chi giu cac san pham hop le nen Agent dua ra lua chon hop ly |
+| Garbage Data (`garbage_data.csv`) | Agent: Based on my data, the best choice is Nuclear Reactor at $999999. | 2 | Du lieu chua nhieu loi va gia tri bat thuong dan den viec Agent dua ra lua chon phi thuc te |
 
 ---
 
@@ -22,7 +22,7 @@ Chay `agent_simulation.py` voi 2 bo du lieu va ghi lai ket qua:
 
 ### Tai sao Agent tra loi sai khi dung Garbage Data?
 
-Khi su dung Garbage Data, Agent de bi anh huong boi cac van de chat luong du lieu. Dau tien la gia tri bat thuong (outliers) nhu san pham co gia am (-10), dieu nay khong hop ly trong thuc te va co the lam sai lech cac phep tinh trung binh hoac danh gia gia tri san pham. Thu hai la du lieu thieu (null values), vi du category rong cua san pham Phone, lam Agent khong the phan loai chinh xac. Ngoai ra, su khong dong nhat ve du lieu (inconsistent data) lam giam kha nang hoc va suy luan cua Agent. Tat ca cac van de nay dan den viec Agent dua ra cau tra loi khong chinh xac hoac thieu day du.
+Khi su dung Garbage Data, Agent bi anh huong nghiem trong boi cac van de chat luong du lieu. Cu the, du lieu co the chua cac gia tri khong hop ly nhu gia tri qua lon (outliers) nhu "Nuclear Reactor" voi muc gia 999999, lam sai lech hoan toan qua trinh danh gia va lua chon san pham. Ngoai ra, cac loi nhu gia tri am, category bi thieu hoac khong dong nhat cung lam Agent hieu sai ve tap du lieu. Khi khong co buoc lam sach du lieu, Agent se dua tren nhung thong tin sai lech nay de dua ra quyet dinh, dan den cac ket qua phi thuc te va khong dang tin cay.
 
 ---
 
@@ -30,4 +30,4 @@ Khi su dung Garbage Data, Agent de bi anh huong boi cac van de chat luong du lie
 
 **Quality Data > Quality Prompt?** Dong y.  
 
-Chat luong du lieu dong vai tro quan trong hon prompt vi du lieu la nen tang de Agent hoc va suy luan. Du prompt co tot den dau, neu du lieu dau vao bi loi thi ket qua van se khong chinh xac.
+Ket qua thi nghiem cho thay ro rang rang chat luong du lieu anh huong truc tiep den do chinh xac cua Agent. Khi du lieu sach, Agent co the dua ra lua chon hop ly (Laptop). Nguoc lai, khi du lieu bi loi, Agent co the dua ra ket qua vo ly (Nuclear Reactor). Dieu nay chung minh rang du lieu chat luong cao quan trong hon viec toi uu prompt.
