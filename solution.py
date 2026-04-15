@@ -46,9 +46,6 @@ def extract(file_path):
 
 
 def validate(data):
-    """
-    Task 2: Kiem tra chat luong du lieu.
-    """
     valid_records = []
     error_count = 0
 
@@ -61,7 +58,13 @@ def validate(data):
         else:
             error_count += 1
 
-    logging.info(f"Validation: {len(valid_records)} valid, {error_count} invalid")
+    # ✅ BẮT BUỘC có print này
+    print(f"Validation summary: {len(valid_records)} valid, {error_count} invalid")
+
+    # logging vẫn giữ
+    logging.info(f"processed={len(valid_records)}")
+    logging.info(f"dropped={error_count}")
+
     return valid_records
 
 
